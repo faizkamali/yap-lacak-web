@@ -6,19 +6,27 @@ def liste_ekle():
     liste = fk.session_state["abo"] + "\n"
     toto.append(liste)
     function.write_todos(toto)
+    fk.session_state["abo"] = ""
+
+fk.write("SENİ SEVİYORUM AŞKIM:heartbeat:")
 
 
-
-
-
-fk.title("Yapılacaklar Uygulaması")
-fk.subheader("Benim yapacaklarım sayfası")
+fk.title("Benim yapacaklarım sayfası")
 fk.write("Bu sayfa aktivitelerinizi artırmanıza yardımcı olacak.")
 
-for i in toto:
-    fk.checkbox(i)
+for index, i in enumerate(toto):
+    checkbox = fk.checkbox(i, key=i)
+    if checkbox:
+        toto.pop(index)
+        function.write_todos(toto)
+        del fk.session_state[i]
+        fk.experimental_rerun()
 
 fk.text_input(label="",
               placeholder="Yeni aktivite gir....", key="abo",
               on_change=liste_ekle)
+
+
+
+
 
