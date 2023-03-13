@@ -8,7 +8,7 @@ def liste_ekle():
     function.write_todos(toto)
     fk.session_state["abo"] = ""
 
-fk.write("SENİ SEVİYORUM AŞKIM:heartbeat:")
+
 
 
 fk.title("Benim yapacaklarım sayfası")
