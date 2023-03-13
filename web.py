@@ -11,7 +11,7 @@ def liste_ekle():
 
 
 
-fk.title("Aşkım ile gün içinde yapacaklarımız")
+fk.title("Aşkım ile gün içinde yapacaklarımız :couple:")
 
 
 for index, i in enumerate(toto):
