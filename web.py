@@ -11,8 +11,8 @@ def liste_ekle():
 
 
 
-fk.title("Benim yapacaklarım sayfası")
-fk.write("Bu sayfa aktivitelerinizi artırmanıza yardımcı olacak.")
+fk.title("Aşkım ile gün içinde yapacaklarımız")
+
 
 for index, i in enumerate(toto):
     checkbox = fk.checkbox(i, key=i)
