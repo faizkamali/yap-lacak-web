@@ -11,19 +11,21 @@ def liste_ekle():
 
 
 
-fk.title("Aşkım ile gün içinde yapacaklarımız :couple:")
+fk.title("My Todo App")
+fk.header("Todo List")
+fk.subheader("This app to increase your daily activity!")
 
 
-for i in toto:
-    checkbox = fk.checkbox(i)
-    #if checkbox:
-     #   toto.pop(index)
-      #  function.write_todos(toto)
-       # del fk.session_state[i]
-        #fk.experimental_rerun()"""
+for index, i in enumerate(toto):
+    checkbox = fk.checkbox(i, key=i)
+    if checkbox:
+        toto.pop(index)
+        function.write_todos(toto)
+        del fk.session_state[i]
+        fk.experimental_rerun()
 
 fk.text_input(label="",
-              placeholder="Yeni aktivite gir....", key="abo",
+              placeholder="Enter todo....", key="abo",
               on_change=liste_ekle)
 
 
